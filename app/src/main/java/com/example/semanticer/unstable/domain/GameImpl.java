@@ -72,23 +72,4 @@ public class GameImpl implements Game {
     public GameBoard getBoard() {
         return gameBoard;
     }
-
-
-    // TODO remove this example method
-    public GameBoard getSampleBoard() {
-        List<List<GameField>> fields =
-            Arrays.asList(
-                    Arrays.asList(GameField.createBlank(), GameField.createBlank(), GameField.create(3, Player.SECOND_PLAYER), GameField.createBlank()),
-                    Arrays.asList(GameField.create(2, Player.FIRST_PLAYER), GameField.createBlank(), GameField.create(1, Player.SECOND_PLAYER), GameField.createBlank()),
-                    Arrays.asList(GameField.create(3, Player.FIRST_PLAYER), GameField.createBlank(), GameField.createBlank(), GameField.create(1, Player.FIRST_PLAYER)),
-                    Arrays.asList(GameField.create(1, Player.SECOND_PLAYER), GameField.create(1, Player.SECOND_PLAYER), GameField.create(3, Player.SECOND_PLAYER), GameField.createBlank()),
-                    Arrays.asList(GameField.createBlank(), GameField.createBlank(), GameField.createBlank(), GameField.create(2, Player.SECOND_PLAYER)),
-                    Arrays.asList(GameField.createBlank(), GameField.createBlank(), GameField.create(1, Player.SECOND_PLAYER), GameField.createBlank())
-            );
-
-        for (List<GameField> row : fields) {
-            Collections.shuffle(row);
-        }
-        return GameBoard.create(fields);
-    }
 }
