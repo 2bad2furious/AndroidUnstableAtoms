@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Unstable.iml" filepath="$PROJECT_DIR$/Unstable.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AndroidUnstableAtoms.iml" filepath="$PROJECT_DIR$/AndroidUnstableAtoms.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

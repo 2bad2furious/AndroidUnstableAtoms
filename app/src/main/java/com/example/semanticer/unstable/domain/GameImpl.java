@@ -26,9 +26,15 @@ public class GameImpl implements Game {
 
         List<List<GameField>> fields = new ArrayList<>();
 
-        // TODO fill up fields with empty GameFields
+        // TODO fill up fields with empty GameFields - done
 
-        gameBoard = getSampleBoard(); // TODO replace with GameBoard.create(fields);
+        for (int i = 0; i < rowCount; i++) {
+            for (int j = 0; j < columnCount; j++) {
+                fields.get(i).add(j,GameField.createBlank());
+            }
+        }
+
+        gameBoard = GameBoard.create(fields); // TODO replace with GameBoard.create(fields); - done?
         playerOnTurn = Player.FIRST_PLAYER;
     }
 
@@ -43,14 +49,22 @@ public class GameImpl implements Game {
             throw new IllegalStateException("Impossible to make move to position x: " + x + " y: " + y);
         }
         // TODO return new GameBoard after this move
+        List<List<GameField>> field = gameBoard.fields();
+        GameField gf = field.get(x).get(y);
+
+        field.get(x).add(y, GameField.create(gf.atomCount()+1,playerOnTurn));
 
         switchPlayerOnTurn();
-        return  getSampleBoard(); // TODO replace with new and CORRECT GameBoard
+        return GameBoard.create(field);
+        /*return  getSampleBoard(); // TODO replace with new and CORRECT GameBoard - done*/
     }
 
     @Override
     public boolean isMovePossible(int x, int y) {
-        // TODO return if
+        List<List<GameField>> field = gameBoard.fields();
+        if(x < 0 || x >= field.size() || y < 0 || y >= field.get(0).size() || (field.get(x).get(y).player() != playerOnTurn && field.get(x).get(y).player() != Player.ANON))
+            return false;
+        // TODO return if - done
         return true;
     }
 
