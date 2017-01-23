@@ -29,6 +29,7 @@ public class GameImpl implements Game {
         // TODO fill up fields with empty GameFields - done
 
         for (int i = 0; i < rowCount; i++) {
+            fields.add(i,new ArrayList<>());
             for (int j = 0; j < columnCount; j++) {
                 fields.get(i).add(j,GameField.createBlank());
             }
